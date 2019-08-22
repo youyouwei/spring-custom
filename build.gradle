@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+}
+apply plugin: "war"
+group 'com.feiyang.spring'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+//    没有走远程仓库 走的本地仓库
+    mavenCentral()
+}
+
+ext{
+    springVersion = "4.3.9.RELEASE"
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile("org.springframework:spring-aop:$springVersion")
+    compile("org.springframework:spring-aspects:$springVersion")
+    compile("org.springframework:spring-beans:$springVersion")
+    compile("org.springframework:spring-context:$springVersion")
+    compile("org.springframework:spring-context-support:$springVersion")
+    compile("org.springframework:spring-core:$springVersion")
+    compile("org.springframework:spring-expression:$springVersion")
+    compile("org.springframework:spring-framework-bom:$springVersion")
+    compile("org.springframework:spring-instrument:$springVersion")
+    compile("org.springframework:spring-jms:$springVersion")
+    compile("org.springframework:spring-messaging:$springVersion")
+    compile("org.springframework:spring-orm:$springVersion")
+    compile("org.springframework:spring-oxm:$springVersion")
+    compile("org.springframework:spring-test:$springVersion")
+    compile("org.springframework:spring-tx:$springVersion")
+    compile("org.springframework:spring-web:$springVersion")
+    compile("org.springframework:spring-webmvc:$springVersion")
+    compile("org.springframework:spring-websocket:$springVersion")
+    compile("commons-logging:commons-logging:1.2")
+    compile("mysql:mysql-connector-java:8.0.12")
+    compile("org.projectlombok:lombok:1.18.2")
+    compile("javax.servlet:javax.servlet-api:4.0.0")
+
+    compile("org.slf4j:slf4j-api:1.7.21")
+    compile("org.slf4j:slf4j-log4j12:1.7.2")
+    compile("org.apache.logging.log4j:log4j-core:2.8.2")
+    compile group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.3.8'
+//    compile group: 'com.mchange', name: 'c3p0', version: '0.9.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+//    redis
+    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '2.1.5.RELEASE'
+//    redis.clients 高版本引用失败 使用低版本
+//    compile group: 'redis.clients', name: 'jedis', version: '3.0.1'
+
+//    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'com.rabbitmq', name: 'amqp-client', version: '4.0.3'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'
+
+
+
+
+
+}
