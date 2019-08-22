@@ -26,8 +26,12 @@ public class SubStringIndexOfDemo {
      */
     public static int indexOfByString(String str, String subStr) {
 
-        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(subStr)) {
+        if (str == null || subStr == null) {
             return -1;
+        }
+        // 可以判断空字符情况
+        if (str == "" && subStr == "") {
+            return 0;
         }
 
         char[] chars = str.toCharArray();
