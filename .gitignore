@@ -3,6 +3,12 @@
 .settings/
 .project
 .classpath
+
+# gradle files
+.gradle/
+build/
+out/
+
 *.iml
 dmds_conection.txt
 dep.txt
