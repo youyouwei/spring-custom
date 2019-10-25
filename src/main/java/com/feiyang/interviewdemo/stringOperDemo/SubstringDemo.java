@@ -28,6 +28,11 @@ public class SubstringDemo {
 
     }
 
+    /**
+     * hex 十六进制转十进制
+     * @param hex
+     * @return
+     */
     private static int tranHex(String hex)
     {
         int[] r1 = new int[2];
