@@ -4,6 +4,7 @@ import com.feiyang.interviewdemo.annotationAndReflect.fruitDemo.Apple;
 import com.feiyang.interviewdemo.annotationAndReflect.fruitDemo.FruitColor;
 import com.feiyang.interviewdemo.annotationAndReflect.fruitDemo.FruitName;
 import com.feiyang.interviewdemo.annotationAndReflect.fruitDemo.FruitProvider;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.lang.reflect.Field;
 
@@ -17,6 +18,8 @@ public class ReflectDemo {
     public static void main(String[] args) {
 
         getFruitInfo(Apple.class);
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
     }
 
@@ -50,6 +53,7 @@ public class ReflectDemo {
                 strFruitProvider = "供应商编号：" + fruitProvider.id() + "\n供应商名称：" + fruitProvider.name() + "\n供应商地址：" + fruitProvider.address();
                 System.out.println(strFruitProvider);
             }
+
         }
     }
 
