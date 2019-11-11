@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.collectionOperDemo;
+package com.feiyang.interviewdemo.collectionOperDemo.list;
 
 import com.feiyang.interviewdemo.springELDemo.Item;
 

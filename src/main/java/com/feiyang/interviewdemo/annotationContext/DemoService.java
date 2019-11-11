@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.annocationContext;
+package com.feiyang.interviewdemo.annotationContext;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Aspect
 public class DemoService {
-    @Pointcut("@annotation(com.feiyang.interviewdemo.annocationContext.DemoAspect)")
+    @Pointcut("@annotation(com.feiyang.interviewdemo.annotationContext.DemoAspect)")
     public void method() {
         System.out.println("annotation context");
     }

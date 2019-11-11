@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.annocationContext;
+package com.feiyang.interviewdemo.annotationContext;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class DemoAspect {
 
-    @Before(value = "com.feiyang.interviewdemo.annocationContext.DemoService.method()")
+    @Before(value = "com.feiyang.interviewdemo.annotationContext.DemoService.method()")
     public void before() {
 
         System.out.println("pointCut 执行前");
@@ -22,7 +22,7 @@ public class DemoAspect {
     }
 
 
-    @After(value = "com.feiyang.interviewdemo.annocationContext.DemoService.method()")
+    @After(value = "com.feiyang.interviewdemo.annotationContext.DemoService.method()")
     public void after() {
 
         System.out.println("pointCut 执行后");
