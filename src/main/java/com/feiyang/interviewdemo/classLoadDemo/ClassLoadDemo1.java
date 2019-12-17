@@ -1,9 +1,7 @@
-package com.feiyang.interviewdemo.jvmDemo;
+package com.feiyang.interviewdemo.classLoadDemo;
 
 import com.sun.nio.zipfs.ZipInfo;
-import jdk.nashorn.internal.runtime.linker.Bootstrap;
 
-import java.lang.invoke.MethodHandle;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -12,13 +10,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author: jhyang
  * @create: 2019-07-24 15:25
  **/
-public class ClassLoadDemo {
+public class ClassLoadDemo1 {
 
     public static void main(String[] args) throws ClassNotFoundException {
         String s = "";
         System.out.println(s.getClass().getClassLoader());
 
-        ClassLoadDemo classLoadDemo = new ClassLoadDemo();
+        ClassLoadDemo1 classLoadDemo = new ClassLoadDemo1();
         System.out.println(classLoadDemo.getClass());
         System.out.println(classLoadDemo);
 

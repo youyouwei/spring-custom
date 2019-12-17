@@ -3,6 +3,9 @@ package com.feiyang.interviewdemo.springDemo;
 import com.feiyang.interviewdemo.springDemo.anntation.Charger;
 import com.feiyang.interviewdemo.springDemo.anntation.DemoConfig;
 import com.feiyang.interviewdemo.springDemo.anntation.Phone;
+import com.feiyang.interviewdemo.springDemo.springBeanDemo.CommonService;
+import com.feiyang.interviewdemo.springDemo.springBeanDemo.SpringContextUtil;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -16,7 +19,7 @@ public class SpringDemo {
 
 //        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(DemoConfig.class);
 //        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(DemoConfig.class, Phone.class);
-        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(Phone.class);
+        /*AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(Phone.class);
 
         Phone phone = annotationConfigApplicationContext.getBean(Phone.class);
         phone.setName("华为");
@@ -28,7 +31,22 @@ public class SpringDemo {
         charger.setModel("iphone");
 
         System.out.println(phone.getName());
-        System.out.println(charger.getModel());
+        System.out.println(charger.getModel());*/
+
+        springContextUtil();
 
     }
+
+    public static void springContextUtil() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigDemo.class);
+
+        CommonService commonService = SpringContextUtil.getBean("commonService");
+        commonService.valid();
+
+//        CommonService  commonService = (CommonService) applicationContext.getBean("commonService");
+//        commonService.valid();
+
+    }
+
+
 }
