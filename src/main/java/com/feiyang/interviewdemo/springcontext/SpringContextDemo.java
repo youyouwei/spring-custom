@@ -2,8 +2,6 @@ package com.feiyang.interviewdemo.springcontext;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import sun.net.idn.Punycode;
 
 /**
  * @description: 自定义手动加载spring context

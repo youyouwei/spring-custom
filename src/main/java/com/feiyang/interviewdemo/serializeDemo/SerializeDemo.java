@@ -4,9 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.istack.internal.NotNull;
 import lombok.extern.slf4j.Slf4j;
-import sun.plugin2.gluegen.runtime.CPU;
 
 /**
  * @Description:
@@ -48,7 +46,7 @@ public class SerializeDemo {
      * @param name
      * @param address
      */
-    public static void demo(@NotNull String name,@NotNull String address) {
+    public static void demo(  String name,  String address) {
         System.out.println(name + address);
     }
 

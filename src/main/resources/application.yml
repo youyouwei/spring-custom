@@ -1,1 +1,9 @@
+
+server:
+  port: 8998
+spring:
+  application:
+    name: spring-custom
+
+
 scanPackage: com.feiyang.controller

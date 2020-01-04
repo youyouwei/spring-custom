@@ -2,6 +2,9 @@ package com.feiyang.jike;
 
 import com.feiyang.jike.threadConcurrency.VolitileDemo;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @Description:
  * @Author: jiahuiyang
@@ -11,7 +14,9 @@ public class Demo {
 
     public static void main(String[] args) throws Exception {
 
-        demo2();
+//        demo2();
+
+        demo3();
 
 
 
@@ -38,6 +43,42 @@ public class Demo {
         Thread.currentThread().join();
 
         System.out.println(volitileDemo.i);
+    }
+
+    public static void demo3() {
+
+        List<Integer> nums = Arrays.asList(1, 2, 3);
+
+        System.out.println("inner of for===============");
+
+        nums.forEach(u->{
+            try {
+                if (u == 2) {
+                    throw new Exception("sss");
+                }
+                System.out.println(u);
+
+            } catch (Exception e) {
+                System.out.println("sss" + u);
+            }
+
+        });
+
+        System.out.println("out of for=================");
+
+        try {
+            nums.forEach(u->{
+                if (u == 2) {
+                    throw new RuntimeException("sss");
+                }
+                System.out.println(u);
+            });
+
+        } catch (Exception e) {
+            System.out.println("sss");
+
+        }
+
     }
 
 
