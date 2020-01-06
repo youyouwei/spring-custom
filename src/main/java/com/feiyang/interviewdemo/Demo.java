@@ -62,7 +62,9 @@ public class Demo {
 
         int oldCapacity = 15;
         int newCapacity = oldCapacity + (oldCapacity >> 1);
-        System.out.println(newCapacity + "ssdsd");
+
+        System.out.println(newCapacity + "tom+jack");
+
 
         Map<String, String> map = new Hashtable<>();
 
