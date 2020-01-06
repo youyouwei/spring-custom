@@ -62,13 +62,16 @@ public class Demo {
 
         int oldCapacity = 15;
         int newCapacity = oldCapacity + (oldCapacity >> 1);
-        System.out.println(newCapacity);
+        System.out.println(newCapacity + "");
 
         Map<String, String> map = new Hashtable<>();
 
         List<String> list = new ArrayList<>();
 
         Stream s = list.stream();
+
+
+
 
 
 
