@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sun.misc.Unsafe;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -33,7 +34,7 @@ public class Demo {
 
         Object o = null;*/
 
-        AtomicInteger atomicInteger = new AtomicInteger(); //第一次初始化是0
+//        AtomicInteger atomicInteger = new AtomicInteger(); //第一次初始化是0
 
         //for (int i = 0; i < 100; i++) {
         //    System.out.println(atomicInteger.incrementAndGet()); //先加然后返回 相当于++i
@@ -65,14 +66,26 @@ public class Demo {
 
         System.out.println(newCapacity + "tom+jack");
 
+//        int oldCapacity = 15;
+//        int newCapacity = oldCapacity + (oldCapacity >> 1);
+//        System.out.println(newCapacity);
+//
+//        Map<String, String> map = new Hashtable<>();
+//
+//        List<String> list = new ArrayList<>();
+//
+//        Stream s = list.stream();
 
-        Map<String, String> map = new Hashtable<>();
+        method1();
 
-        List<String> list = new ArrayList<>();
-
-        Stream s = list.stream();
+    }
 
 
+    public static void method1() throws IOException {
+        System.out.println("请输入你的名称并按回车键结束！");
+        byte[] bytes = new byte[1024];
+        System.in.read(bytes);
+        System.out.println("你输入的是：" + new String(bytes));
 
 
 

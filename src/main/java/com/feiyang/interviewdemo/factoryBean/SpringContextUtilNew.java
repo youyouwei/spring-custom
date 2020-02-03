@@ -13,14 +13,14 @@ import java.util.Locale;
  * @create: 2019-05-30 11:32
  **/
 @Component
-public class SpringContextUtil implements ApplicationContextAware {
+public class SpringContextUtilNew implements ApplicationContextAware {
 
     private static ApplicationContext context;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("---------------context--------------" + applicationContext);
-        SpringContextUtil.context = applicationContext;
+        SpringContextUtilNew.context = applicationContext;
     }
 
     public static ApplicationContext getApplicationContext() {

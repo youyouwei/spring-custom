@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
  * @create: 2019-04-17 14:31
  **/
 @Component
-@Aspect
+//去掉 Aspect spring boot检测注册报错
+//@Aspect
 public class DemoAspect {
 
     @Before(value = "com.feiyang.interviewdemo.annotationContext.DemoService.method()")

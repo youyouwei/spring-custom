@@ -1,7 +1,5 @@
 package com.feiyang.servlet;
 
-import sun.rmi.runtime.Log;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;

@@ -19,7 +19,7 @@ public class FactoryBeanContext {
 
         demoService.doST();
 
-        DemoService demoServiceNew = (DemoService) SpringContextUtil.getBean("demoServiceProxy");
+        DemoService demoServiceNew = (DemoService) SpringContextUtilNew.getBean("demoServiceProxy");
         demoServiceNew.doST();
 
 
