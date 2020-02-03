@@ -61,10 +61,10 @@ public class Demo {
 
         //linkListDemo();
 
-        int oldCapacity = 15;
-        int newCapacity = oldCapacity + (oldCapacity >> 1);
-
-        System.out.println(newCapacity + "tom+jack");
+//        int oldCapacity = 15;
+//        int newCapacity = oldCapacity + (oldCapacity >> 1);
+//
+//        System.out.println(newCapacity + "tom+jack");
 
 //        int oldCapacity = 15;
 //        int newCapacity = oldCapacity + (oldCapacity >> 1);
