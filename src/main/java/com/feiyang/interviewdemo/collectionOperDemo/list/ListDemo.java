@@ -2,7 +2,9 @@ package com.feiyang.interviewdemo.collectionOperDemo.list;
 
 import com.feiyang.interviewdemo.springELDemo.Item;
 
+import java.lang.reflect.Field;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 /**
@@ -16,12 +18,19 @@ import java.util.stream.Collectors;
  * @create: 2019-07-02 13:36
  **/
 public class ListDemo {
-    public static void main(String[] args) {
+
+    private static final List<Integer> LIST = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+
+    public static void main(String[] args) throws Exception {
 
         //array2List();
 
         //removeListElement();
-        arrayOrCollectionSort();
+//        arrayOrCollectionSort();
+
+//        method();
+
+        method4();
     }
 
 
@@ -99,6 +108,100 @@ public class ListDemo {
         });    //自定义Comparator排序方法 compare  该排序为倒序
 
         list.forEach(System.out::println);
+
+    }
+
+    /**
+     * 迭代删除 foreach
+     */
+    public static void method() {
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+
+        for (Integer i : list) {
+            System.out.println(i);
+//            if (2 == i) {
+//                list.remove(i);
+//            }
+        }
+
+    }
+
+    /**
+     * for 循环删除
+     */
+    public static void method1() {
+
+    }
+
+    /**
+     * 迭代器删除 iterator
+     */
+    public static void method2() {
+
+    }
+
+    /**
+     * iterator 迭代遍历
+     */
+    public static void method3() throws Exception {
+        for (Integer i : LIST) {
+            Thread.sleep(1000);
+
+
+            Field field = LIST.getClass().getDeclaredField("modCount");
+            field.setAccessible(true);
+            System.out.println("modCount = " + field.get(LIST));
+            Field[] fields = getAllFields(LIST.getClass());
+
+            for (Field f : fields) {
+                if (f.getName().equals("modCount")) {
+                    f.setAccessible(true);
+                    System.out.println("modCount = " + f.get(LIST));
+                }
+            }
+
+            System.out.println(i);
+        }
+
+    }
+
+    private static Field[] getAllFields(Class<?> clazz) {
+        List<Field> fieldList = new ArrayList<>();
+        while (clazz != null){
+            fieldList.addAll(new ArrayList<>(Arrays.asList(clazz.getDeclaredFields())));
+            clazz = clazz.getSuperclass();
+        }
+        Field[] fields = new Field[fieldList.size()];
+        return fieldList.toArray(fields);
+    }
+
+    /**
+     * 多线程迭代 list
+     */
+    public static void method4() throws Exception {
+        ExecutorService executorService = new ThreadPoolExecutor(2, 2, 0, TimeUnit.SECONDS, new ArrayBlockingQueue<>(10), (r) -> new Thread(r));
+
+//        Future<Integer> future = executorService.submit(() -> {
+//            System.out.println("over");
+//        }, 10);
+//        while (future.isDone()) {
+//            System.out.println(future.get());
+//        }
+//        executorService.shutdown();
+
+        for (int i = 0; i < 2; i++) {
+            executorService.execute(()->{
+                try {
+                    method3();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+        executorService.shutdown();
+
+
 
     }
 

@@ -1,10 +1,7 @@
 package com.feiyang.interviewdemo.collectionOperDemo;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -34,6 +31,14 @@ public class MapDemo {
         //mapSort();
 
         checkIfHasKey();
+
+        ArrayList list = new ArrayList();
+
+        list.add("name");
+        list.add(1);
+
+
+
 
 
 

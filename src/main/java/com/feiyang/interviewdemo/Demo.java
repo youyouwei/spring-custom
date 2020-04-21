@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
@@ -76,8 +77,9 @@ public class Demo {
 //
 //        Stream s = list.stream();
 
-        method1();
+//        method1();
 
+        method2();
     }
 
 
@@ -146,6 +148,31 @@ public class Demo {
             System.out.println(s);
 
         }
+
+    }
+
+    public static void method2() throws InterruptedException {
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                    System.out.println("timeTask sleep 1 second");
+                } catch (InterruptedException e) {
+
+                }
+            }
+        };
+
+        // 让timer 成为守护线程 这样 主线程结束后 守护线程会自动终止 或则调用cancel方法终止
+        // 否则timer在执行完task 任务后程序也不会终止，只有垃圾回收才能回收掉
+        Timer timer = new Timer(true);
+        timer.schedule(timerTask, 1000);
+
+        TimeUnit.SECONDS.sleep(5);
+
+        System.out.println("main thread execute end");
+//        timer.cancel();
 
     }
 
