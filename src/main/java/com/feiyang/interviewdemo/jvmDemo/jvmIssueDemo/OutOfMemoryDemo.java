@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.jvmIssueDemo;
+package com.feiyang.interviewdemo.jvmDemo.jvmIssueDemo;
 
 import java.util.ArrayList;
 import java.util.List;

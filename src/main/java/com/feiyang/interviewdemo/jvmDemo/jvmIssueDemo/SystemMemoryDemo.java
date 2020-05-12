@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.jvmIssueDemo;
+package com.feiyang.interviewdemo.jvmDemo.jvmIssueDemo;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;

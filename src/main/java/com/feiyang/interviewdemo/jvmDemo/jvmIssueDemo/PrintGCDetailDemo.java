@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.jvmIssueDemo;
+package com.feiyang.interviewdemo.jvmDemo.jvmIssueDemo;
 
 /**
  * @description: 打印GC日志
