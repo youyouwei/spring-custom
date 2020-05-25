@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.springcontext;
+package com.feiyang.interviewdemo.springDemo.springcontext;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

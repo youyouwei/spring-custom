@@ -1,6 +1,6 @@
 package com.feiyang.interviewdemo.testdemo;
 
-import com.feiyang.interviewdemo.springcontext.User;
+import com.feiyang.interviewdemo.springDemo.springcontext.User;
 
 /**
  * @description:

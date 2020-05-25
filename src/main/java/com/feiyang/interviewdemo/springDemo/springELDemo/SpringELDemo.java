@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.springELDemo;
+package com.feiyang.interviewdemo.springDemo.springELDemo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

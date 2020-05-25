@@ -1,6 +1,5 @@
-package com.feiyang.interviewdemo.springcontext;
+package com.feiyang.interviewdemo.springDemo.springcontext;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**

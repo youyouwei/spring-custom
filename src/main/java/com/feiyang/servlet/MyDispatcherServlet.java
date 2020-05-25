@@ -1,6 +1,6 @@
 package com.feiyang.servlet;
 
-import com.feiyang.interviewdemo.springcontext.User;
+import com.feiyang.interviewdemo.springDemo.springcontext.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

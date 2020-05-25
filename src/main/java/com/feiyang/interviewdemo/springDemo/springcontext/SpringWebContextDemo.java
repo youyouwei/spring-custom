@@ -1,8 +1,4 @@
-package com.feiyang.interviewdemo.springcontext;
-
-import com.feiyang.interviewdemo.tomcat.Request;
-
-import javax.servlet.ServletContext;
+package com.feiyang.interviewdemo.springDemo.springcontext;
 
 /**
  * @description: web项目自定义手动加载bean

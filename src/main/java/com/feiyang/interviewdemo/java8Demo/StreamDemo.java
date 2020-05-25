@@ -1,5 +1,8 @@
 package com.feiyang.interviewdemo.java8Demo;
 
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -16,13 +19,7 @@ public class StreamDemo {
     private String name = "";
 
     public static void main(String[] args) {
-        List<String> list = Arrays.asList("a", "b", "c", "c");
-        //toList
-        List<String> listNew = list.stream().map(String::toUpperCase).collect(Collectors.toList());
-        System.out.println(listNew);
-        // toMap 第三个参数是key重复处理方式
-        Map<String, String> map = list.stream().map(String::toUpperCase).collect(Collectors.toMap(String::toString, String::toString, (oldValue, newValue) -> oldValue, HashMap::new));
-        System.out.println(map);
+
 
         reduceMethod();
     }
@@ -69,6 +66,41 @@ public class StreamDemo {
         //第三个参数表示 类型转换 int->long
         long resultNew = numList.stream().reduce(0L, (a, b) -> a + b, (a, b) -> 0L);
         System.out.println(resultNew);
+
+    }
+
+    public static void method() {
+        List<String> list = Arrays.asList("a", "b", "c", "c");
+        //toList
+        List<String> listNew = list.stream().map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println(listNew);
+        // toMap 第三个参数是key重复处理方式
+        Map<String, String> map = list.stream().map(String::toUpperCase).collect(Collectors.toMap(String::toString, String::toString, (oldValue, newValue) -> oldValue, HashMap::new));
+        System.out.println(map);
+    }
+
+    /**
+     * 基本类数组转包装类
+     */
+    public static void method1() {
+        int[] nums = {1, 3, 6, 4};
+//        Integer[] integers = Arrays. ;
+        Assert.notNull(null, null);
+
+
+
+    }
+
+
+    /**
+     * java8 stream 中map 和 reduce操作
+     * map是映射函数 可以把入参转成另外一个类型
+     * reduce 是执行一个函数
+     */
+    public static void mapReduce() {
+
+
+
 
     }
 

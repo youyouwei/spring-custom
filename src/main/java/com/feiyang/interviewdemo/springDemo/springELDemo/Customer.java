@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.springELDemo;
+package com.feiyang.interviewdemo.springDemo.springELDemo;
 
 import lombok.Getter;
 import lombok.Setter;

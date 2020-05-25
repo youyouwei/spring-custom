@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
 
-    <bean id="user" class="com.feiyang.interviewdemo.springcontext.User">
+    <bean id="user" class="com.feiyang.interviewdemo.springDemo.springcontext.User">
         <property name="id" value="1"/>
         <property name="address" value="china"/>
         <property name="name" value="tom"/>

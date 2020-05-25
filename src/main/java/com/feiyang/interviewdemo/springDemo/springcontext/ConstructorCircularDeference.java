@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.springcontext;
+package com.feiyang.interviewdemo.springDemo.springcontext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

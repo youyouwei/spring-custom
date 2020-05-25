@@ -4,6 +4,7 @@ import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 import sun.misc.Unsafe;
 
 import java.io.IOException;
@@ -79,7 +80,9 @@ public class Demo {
 
 //        method1();
 
-        method2();
+//        method2();
+
+        method3();
     }
 
 
@@ -174,6 +177,17 @@ public class Demo {
         System.out.println("main thread execute end");
 //        timer.cancel();
 
+    }
+
+    public static void method3() {
+        String s = "";
+        if (StringUtils.isEmpty(s)) {
+            System.out.println("s is empty");
+        }
+
+        if (StringUtils.hasText(s)) {
+            System.out.println("s has text as s is not empty");
+        }
     }
 
 }
