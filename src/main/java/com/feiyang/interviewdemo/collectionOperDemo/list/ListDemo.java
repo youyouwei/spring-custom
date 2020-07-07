@@ -29,7 +29,10 @@ public class ListDemo {
 
 //        method();
 
-        method4();
+//        method4();
+
+//        method5();
+        method6();
     }
 
 
@@ -202,6 +205,48 @@ public class ListDemo {
 
 
 
+    }
+
+    /**
+     * 移除list中的null元素
+     */
+    public static void method5() {
+        List<String> list = new ArrayList<>(Arrays.asList("11", "22", null, null));
+
+        System.out.println(list.size());
+
+        list.removeAll(Collections.singletonList(null));
+
+        System.out.println(list.size());
+
+        list.stream().forEach(System.out::println);
+    }
+
+    /**
+     * 使用iterator移除list中某个元素
+     */
+    public static void method6() {
+        List<String> list = new ArrayList<>(Arrays.asList("11", "22", "33"));
+        Iterator iterator = list.iterator();
+        /*if (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }*/
+        System.out.println("=============移除前===============");
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("===================移除操作===================");
+        iterator = list.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().equals("22")) {
+                iterator.remove();
+            }
+        }
+        System.out.println("=================移除后=================");
+        iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 
 }

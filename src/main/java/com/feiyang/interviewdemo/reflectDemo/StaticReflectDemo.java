@@ -1,13 +1,8 @@
 package com.feiyang.interviewdemo.reflectDemo;
 
-import com.feiyang.interviewdemo.multiThreadDemo.SubThread;
-
-import javax.print.attribute.standard.PrinterURI;
-import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 /**
  * @description: 静态对象反射调用
