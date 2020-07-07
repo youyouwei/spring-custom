@@ -24,6 +24,8 @@ public class SpringContextDemo {
 
     public static void annotationDemo() {
         ApplicationContext context = new AnnotationConfigApplicationContext(CustomerConfig.class);
+        //添加自定义ApplicationEvent
+        context.publishEvent(new CustomApplicationEvent(new Object(), "none"));
         MedicineService medicineService = context.getBean(MedicineService.class);
         medicineService.eatMedicine();
 
