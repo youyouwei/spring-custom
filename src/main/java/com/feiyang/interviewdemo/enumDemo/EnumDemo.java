@@ -1,6 +1,7 @@
 package com.feiyang.interviewdemo.enumDemo;
 
 import com.alibaba.fastjson.JSON;
+import com.feiyang.interviewdemo.enumDemo.enumMapper.KeyValueEnumMapper;
 
 /**
  * @Description:
@@ -10,7 +11,32 @@ import com.alibaba.fastjson.JSON;
 public class EnumDemo {
 
     public static void main(String[] args) {
-        System.out.println(JSON.toJSONString(PersonEnum.values()));
+        new EnumDemo().method();
+        method1();
+    }
+
+    /**
+     * 测试enum和code之间转换
+     */
+    public void method() {
+        PersonEnum personEnum = PersonEnum.TEACHER;
+        System.out.println(KeyValueEnumMapper.INSTANCE.getCodeAsInt(personEnum));
+        Integer code = 2;
+        System.out.println(KeyValueEnumMapper.INSTANCE.getKeyValueEnum(PersonEnum.class, code));
+    }
+
+    /**
+     * 两种获取枚举数组的方式
+     */
+    public static void method1() {
+        PersonEnum[] personEnums = PersonEnum.values();
+
+        System.out.println(JSON.toJSONString(personEnums));
+
+        personEnums = PersonEnum.class.getEnumConstants();
+
+        System.out.println(JSON.toJSONString(personEnums));
+
 
     }
 

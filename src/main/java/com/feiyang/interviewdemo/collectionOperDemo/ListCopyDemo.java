@@ -3,6 +3,7 @@ package com.feiyang.interviewdemo.collectionOperDemo;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
 
+import javax.validation.constraints.NotNull;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +90,7 @@ public class ListCopyDemo {
     static class Person implements Serializable {
         //直接使用jdk 序列化需要使用实现serializable 接口
         private static final long serialVersionUID = -2353531817768776222L;
+        @NotNull
         private Integer id;
         private String name;
         private String address;
