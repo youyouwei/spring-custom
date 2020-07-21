@@ -102,8 +102,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 //    implementation 'org.springframework.boot:spring-boot-starter'
 
-//    spring-cloud-context 可以解析bootstrap.yml    
+//    spring-cloud-context 可以解析bootstrap.yml   
 //    implementation 'org.springframework.cloud:spring-cloud-context'
+//    test fetch
     compile group: 'org.springframework.cloud', name: 'spring-cloud-context', version: '1.2.5.RELEASE'
 
     compile group: 'org.openjdk.jol', name: 'jol-core', version: '0.10'
