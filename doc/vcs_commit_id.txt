@@ -1,0 +1,5 @@
+v1.0.0 源代码关联的 commit id 信息如下
+vcs地址：
+vcs分支地址：
+vcs commit id：
+vcs tag:
