@@ -104,7 +104,7 @@ dependencies {
 
 //    spring-cloud-context 可以解析bootstrap.yml   
 //    implementation 'org.springframework.cloud:spring-cloud-context'
-//    test fyyetch
+//    test fddetch
 
     compile group: 'org.springframework.cloud', name: 'spring-cloud-context', version: '1.2.5.RELEASE'
 
