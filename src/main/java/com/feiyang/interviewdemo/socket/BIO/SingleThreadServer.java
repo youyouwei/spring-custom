@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.socket;
+package com.feiyang.interviewdemo.socket.BIO;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

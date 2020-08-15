@@ -190,5 +190,9 @@ public class Demo {
         }
     }
 
+    public static void method4() {
+
+    }
+
 }
 

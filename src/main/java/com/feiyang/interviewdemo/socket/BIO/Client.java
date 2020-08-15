@@ -1,4 +1,4 @@
-package com.feiyang.interviewdemo.socket;
+package com.feiyang.interviewdemo.socket.BIO;
 
 import com.feiyang.interviewdemo.thread.Run;
 
