@@ -120,6 +120,11 @@ dependencies {
     // https://mvnrepository.com/artifact/io.netty/netty-all
     compile group: 'io.netty', name: 'netty-all', version: '4.1.50.Final'
 
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.6'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    
+    
+
 
 
 }
