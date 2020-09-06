@@ -66,6 +66,12 @@ public class HashMapInitializeDemo {
         //进行put操作时会抛出异常
         map.put("d", 4);
 
+        System.out.println(list);
+
+        if (list != null) {
+
+        }
+
 
 
     }
