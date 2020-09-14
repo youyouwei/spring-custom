@@ -1,6 +1,10 @@
 package com.feiyang.interviewdemo;
 
+import com.alibaba.fastjson.JSON;
 import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -82,7 +86,9 @@ public class Demo {
 
 //        method2();
 
-        method3();
+//        method3();
+
+        method5();
     }
 
 
@@ -194,5 +200,32 @@ public class Demo {
 
     }
 
+    public static void method5() {
+        Student student = new Student();
+        student.setNo("001");
+        student.setId(1);
+        student.setName("tom");
+        student.setSex("man");
+        Person person = student;
+        System.out.println(JSON.toJSONString(person));
+        System.out.println(person.toString());
+
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class Person {
+        private Integer id = 1;
+        private String name;
+        private String sex;
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class Student extends Person{
+        private String no;
+    }
 }
 

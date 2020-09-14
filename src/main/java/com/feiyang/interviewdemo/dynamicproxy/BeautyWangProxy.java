@@ -3,6 +3,7 @@ package com.feiyang.interviewdemo.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * @description: 代理类
@@ -18,6 +19,18 @@ public class BeautyWangProxy implements InvocationHandler {
     public BeautyWangProxy(Object object) {
         this.object = object;
     }
+
+    public BeautyWangProxy() {
+
+    }
+
+    public Object wrap(Object object) {
+
+        this.object = object;
+        return Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(), this);
+
+    }
+
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

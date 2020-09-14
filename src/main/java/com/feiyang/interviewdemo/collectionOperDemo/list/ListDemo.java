@@ -1,10 +1,17 @@
 package com.feiyang.interviewdemo.collectionOperDemo.list;
 
-import com.feiyang.interviewdemo.springDemo.springELDemo.Item;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.time.DateUtils;
 
 import java.lang.reflect.Field;
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * @description:
@@ -248,5 +255,56 @@ public class ListDemo {
             System.out.println(iterator.next());
         }
     }
+
+
+    /**
+     * list 集合过滤元素和选择元素
+     * @param args
+     */
+    public static void method7(String[] args) {
+
+        //list 集合中 取最小值
+
+        List<Date> list = new ArrayList<Date>() {{
+            add(new Date());
+            add(DateUtils.addDays(new Date(), 1));
+            add(DateUtils.addDays(new Date(), 2));
+        }};
+        list.add(DateUtils.addDays(new Date(), -1));
+
+        list.forEach(System.out::println);
+
+        System.out.println(list.stream().min(Date::compareTo).toString());
+
+
+
+        @Data
+        @AllArgsConstructor
+        @NoArgsConstructor
+        class Demo{
+            private Integer id;
+
+            private String name;
+
+
+        }
+
+        //排除 list中的某条数据
+        List<Demo> demoList = new ArrayList<Demo>() {
+            {
+                add(new Demo(1, "tom"));
+                add(new Demo(1, "tcm"));
+                add(new Demo(4, "tom"));
+                add(new Demo(2, "tim"));
+                add(new Demo(3, "tam"));
+            }
+        };
+
+        demoList = demoList.stream().filter(u -> !(1 == u.getId() && "tom".equals(u.getName()))).collect(Collectors.toList());
+
+        demoList.forEach(System.out::println);
+
+    }
+
 
 }
