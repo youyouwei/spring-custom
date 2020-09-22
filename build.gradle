@@ -20,7 +20,7 @@ plugins {
 }
 apply plugin: "war"
 apply plugin: "net.ltgt.apt"
-group 'com.feiyang.spring'
+group 'com.demo.spring'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -122,8 +122,18 @@ dependencies {
 
     compile group: 'org.mybatis', name: 'mybatis', version: '3.4.6'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
-    
-    
+
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.70'
+
+// https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version: '24.1.1-jre'
+// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-openfeign-core
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-openfeign-core', version: '2.2.1.RELEASE'
+
+    // https://mvnrepository.com/artifact/com.github.rockylomo/rxlib
+    compile group: 'com.github.rockylomo', name: 'rxlib', version: '1.0.24'
+
 
 
 

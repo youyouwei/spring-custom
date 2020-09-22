@@ -6,7 +6,7 @@
 
     <filter>
         <filter-name>myfilter</filter-name>
-        <filter-class>com.feiyang.servlet.MyFilter</filter-class>
+        <filter-class>com.demo.servlet.MyFilter</filter-class>
     </filter>
     <!--<filter-mapping>-->
         <!--<filter-name>myfilter</filter-name>-->
@@ -33,7 +33,7 @@
 
     <servlet>
         <servlet-name>myspringmvc</servlet-name>
-        <servlet-class>com.feiyang.servlet.MyDispatcherServlet</servlet-class>
+        <servlet-class>com.demo.servlet.MyDispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:beans.xml</param-value>

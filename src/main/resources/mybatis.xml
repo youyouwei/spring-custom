@@ -4,7 +4,7 @@
     <!-- 为JavaBean起类别名 -->
     <typeAliases>
         <!-- 指定一个包名起别名，将包内的 Java 类的类名作为类的类别名 -->
-        <package name="com.feiyang.interviewdemo.mybatisDemo.model" />
+        <package name="com.demo.interviewdemo.mybatisDemo.model" />
     </typeAliases>
     <!-- 配置mybatis运行环境 -->
     <environments default="development">
@@ -23,7 +23,7 @@
         </environment>
     </environments>
     <mappers >
-        <package name="com.feiyang.interviewdemo.mybatisDemo.mapper"/>
+        <package name="com.demo.interviewdemo.mybatisDemo.mapper"/>
     </mappers>
 
 </configuration>

@@ -1,4 +1,4 @@
-import com.feiyang.interviewdemo.springDemo.springcontext.CustomerConfig;
+import com.demo.interviewdemo.springDemo.springcontext.CustomerConfig;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

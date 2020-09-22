@@ -6,4 +6,4 @@ spring:
     name: spring-custom
 
 
-scanPackage: com.feiyang.controller
+scanPackage: com.demo.controller
