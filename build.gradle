@@ -133,6 +133,13 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.github.rockylomo/rxlib
     compile group: 'com.github.rockylomo', name: 'rxlib', version: '1.0.24'
+    // https://mvnrepository.com/artifact/org.ow2.asm/asm
+    compile group: 'org.ow2.asm', name: 'asm', version: '8.0'
+// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+
+// https://mvnrepository.com/artifact/org.apache.commons/commons-collections4
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.2'
 
 
 

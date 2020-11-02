@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.java8Demo;
+package com.demo.interviewdemo.java8Demo.streamDemo;
 
 /**
  * @Description: java8 后接口可以是函数接口  并且接口中可以定义默认方法 和 静态方法  其中默认方法可以被继承

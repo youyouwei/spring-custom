@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.java8Demo;
+package com.demo.interviewdemo.java8Demo.streamDemo;
 
 import org.springframework.util.CollectionUtils;
 

@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.java8Demo;
+package com.demo.interviewdemo.java8Demo.streamDemo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
