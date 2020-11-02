@@ -17,9 +17,9 @@ public class StreamFilterDemo {
 
     public static void main(String[] args) {
 
-//        removeElement();
+        removeElement();
 
-        method();
+//        method();
 
     }
 
@@ -32,7 +32,7 @@ public class StreamFilterDemo {
         list.add("444");
         list.add("555");
 
-        removeListError(list);
+//        removeListError(list);
 
 
 
