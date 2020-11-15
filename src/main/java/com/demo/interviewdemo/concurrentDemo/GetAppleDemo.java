@@ -1,6 +1,10 @@
 package com.demo.interviewdemo.concurrentDemo;
 
+
+import com.google.common.base.Stopwatch;
+
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description:
@@ -12,8 +16,10 @@ public class GetAppleDemo {
 
     public static void main(String[] args) {
 
+        Stopwatch stopwatch = Stopwatch.createStarted();
         Apple apple = new Apple();
-        apple.setCount(9);
+        apple.setCount(9000000);
+
         CountDownLatch latch = new CountDownLatch(1);
         CountDownLatch endLatch = new CountDownLatch(2);
         Thread monkey1 = new Thread(new Monkey(2, apple, "monkey1", latch, endLatch));
@@ -36,6 +42,8 @@ public class GetAppleDemo {
 
 
         System.out.println("the left apples: " + apple.getCount());
+        stopwatch.stop();
+        System.out.println(stopwatch.elapsed(TimeUnit.MILLISECONDS));
 
     }
 

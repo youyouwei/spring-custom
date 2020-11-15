@@ -1,9 +1,7 @@
 package com.demo.interviewdemo.jsonDemo;
 
 import com.alibaba.fastjson.JSON;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * @Description:  运行时通过子类传入 json 工具进行转换 转换后的结果回事子类的全部字段
@@ -18,7 +16,44 @@ import lombok.NoArgsConstructor;
 public class Subclass2JsonDemo {
 
 
+
+
     public static void main(String[] args) {
+
+
+        method1(FruitJuice.class);
+
+    }
+
+    /**
+     * 反序列化  子类的json字符串转父类
+     */
+    @SuppressWarnings("unchecked")
+    public static <T extends Drink> void method1(Class<T> tClass) {
+        String json = " ";
+        T t = (T) JSON.parseObject("{\"color\":\"red\",\"juiceNum\":\"10\",\"type\":\"big\",\"volume\":\"200\"}", tClass);
+
+
+        System.out.println(JSON.toJSONString(t));
+    }
+
+
+    /**
+     * 根据父类接受json 串，进行反序列化，然后再转成子类
+     */
+    public static void method2(Drink drink, String type) {
+
+
+
+    }
+
+
+
+
+    /**
+     * 序列化 中 子类转成父类后，序列化后还是显示所有子类字段和值
+     */
+    public void method() {
         FruitJuice fruitJuice = new FruitJuice();
         fruitJuice.setColor("red");
         fruitJuice.setVolume("200");
@@ -32,26 +67,73 @@ public class Subclass2JsonDemo {
         //{"color":"red","juiceNum":"10","type":"big","volume":"200"}
         // 所以虽然是通过Drink类型传入 输出的还是子类所有的字段  这种功能可以在restApi 中自动扩充字段 但是不好的是代码看不懂，通过lombok生成的api实际字段不全
         // 这也是理赔中统一查询接口返回的不同业务类型 不同json串 的原理
-
-
     }
 
 
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
+
     static class Drink {
         private String color;
         private String volume;
+
+        public String getColor() {
+            return color;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        public String getVolume() {
+            return volume;
+        }
+
+        public void setVolume(String volume) {
+            this.volume = volume;
+        }
     }
 
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
+
     static class FruitJuice extends Drink {
 
         private String juiceNum;
         private String type;
+
+        public String getJuiceNum() {
+            return juiceNum;
+        }
+
+        public void setJuiceNum(String juiceNum) {
+            this.juiceNum = juiceNum;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+    }
+}
+
+
+interface Person {
+    void drink(Subclass2JsonDemo.Drink drink);
+
+}
+
+class Child implements Person {
+
+    /**
+     * 参数子类代替父类不能算重写
+     * @param drink
+     */
+    public void drink(Subclass2JsonDemo.FruitJuice drink) {
+
+    }
+
+    @Override
+    public void drink(Subclass2JsonDemo.Drink drink) {
 
     }
 }
