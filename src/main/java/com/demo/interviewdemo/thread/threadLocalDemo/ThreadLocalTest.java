@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.threadLocalDemo;
+package com.demo.interviewdemo.thread.threadLocalDemo;
 
 /**
  * @description:
