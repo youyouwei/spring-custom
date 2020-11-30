@@ -1,0 +1,6 @@
+@startuml
+
+BeanFactoryTest -> beanFactory:BeanFactory
+
+
+@enduml

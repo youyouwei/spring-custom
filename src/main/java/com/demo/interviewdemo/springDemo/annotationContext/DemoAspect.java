@@ -1,8 +1,9 @@
-package com.demo.interviewdemo.annotationContext;
+package com.demo.interviewdemo.springDemo.annotationContext;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,22 +12,19 @@ import org.springframework.stereotype.Component;
  * @create: 2019-04-17 14:31
  **/
 @Component
-//去掉 Aspect spring boot检测注册报错
-//@Aspect
+@Aspect
 public class DemoAspect {
 
-    @Before(value = "DemoService.method()")
+    @Pointcut("execution( * com.demo.interviewdemo.springDemo.annotationContext.*.*(..) )")
+    public void demo() {}
+
+    @Before("demo()")
     public void before() {
-
         System.out.println("pointCut 执行前");
-
     }
 
-
-    @After(value = "DemoService.method()")
+    @After("demo()")
     public void after() {
-
         System.out.println("pointCut 执行后");
-
     }
 }
