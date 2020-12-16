@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.event.javaEvent;
+package com.demo.interviewdemo.designMode.event.javaEvent;
 
 /**
  * @Description:

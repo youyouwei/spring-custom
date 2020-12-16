@@ -5,7 +5,9 @@ import com.google.common.collect.Streams;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -116,6 +118,31 @@ public class OptionalDemo<T> {
                 .findFirst()
                 .orElseGet(null);
     }
+
+
+    public static void method(String[] args) {
+        List<Integer> list = Arrays.asList(1, 2, 3);
+//        list = null;
+
+//        Objects.requireNonNull(list).forEach(System.out::println);
+
+        Optional.ofNullable(list).ifPresent(u -> u.forEach(System.out::println));
+
+        Optional.ofNullable(list).map(u -> {
+            u.forEach(System.out::println);
+            return null;
+        } );
+
+        Optional.ofNullable(list).orElse(Lists.newArrayList()).forEach(System.out::println);
+
+        Optional.ofNullable(list).orElseGet(Lists::newArrayList).forEach(System.out::println);
+
+        //requireNonNull 如果是null会抛出异常 如果是强制不能为空可以使用这个
+        Objects.requireNonNull(list).forEach(System.out::println);
+
+    }
+
+
 
 
 }

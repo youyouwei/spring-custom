@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.event.javaEvent;
+package com.demo.interviewdemo.designMode.event.javaEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,5 +54,25 @@ public class DoorManager {
         event.setDoorState(DoorStateEnum.OPEN);
 
         notifyDoors(event);
+    }
+
+    public static void main(String[] args) {
+        DoorManager doorManager = new DoorManager();
+        //声明事件监听者
+        doorManager.addDoorListener(new FrontDoorListener());
+
+        //声明事件
+        DoorEvent doorEvent = new DoorEvent(new Object());
+        //修改事件状态
+        doorEvent.setDoorState(DoorStateEnum.OPEN);
+
+        //发布事件 本质就是把事件传递给监听者 监听者通过事件类型或则事件状态选择不同的处理
+        for (IDoorListener listener : doorManager.listeners) {
+            listener.dealDoorEvent(doorEvent);
+        }
+
+
+        //DoorManager 有封装好的事件处理方法
+        doorManager.fireOpend();
     }
 }
