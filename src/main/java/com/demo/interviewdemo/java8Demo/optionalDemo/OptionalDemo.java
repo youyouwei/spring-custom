@@ -55,6 +55,7 @@ public class OptionalDemo<T> {
 
         //查找某个元素 并返回
         Integer result = 0;
+        System.out.println();
         if (CollectionUtils.isNotEmpty(list)) {
             for (String s : list) {
                 if ("1".equals(s)) {
