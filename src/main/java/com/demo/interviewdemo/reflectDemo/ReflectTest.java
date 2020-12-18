@@ -152,5 +152,24 @@ public class ReflectTest {
     }
 
 
+    /**
+     * 反射 调用静态方法
+     */
+    public static void method(Class type) {
+
+
+    }
+
+
+
+    static class Great{
+        public static void say() {
+            System.out.println("great");
+        }
+    }
+
+
+
+
 
 }

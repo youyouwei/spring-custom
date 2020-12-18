@@ -141,6 +141,9 @@ dependencies {
 // https://mvnrepository.com/artifact/org.apache.commons/commons-collections4
     compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.2'
 
+    compile("org.mockito:mockito-core:3.3.3")
+    compile("org.hamcrest:hamcrest:2.2")
+    
 
 
 
