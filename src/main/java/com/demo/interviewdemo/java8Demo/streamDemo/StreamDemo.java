@@ -25,7 +25,9 @@ public class StreamDemo {
 //        streamBuild();
 //        flatMap();
 
-        mapReduce();
+//        mapReduce();
+
+        chainOperate();
     }
 
 
@@ -156,8 +158,43 @@ public class StreamDemo {
 
     }
 
+
+    /**
+     *
+     *
+     *  stream 遍历所有元素取值 可以使用函数式编程 如 BinaryOperator.maxBy 方法
+     * @Override
+     *     public final Optional<P_OUT> max(Comparator<? super P_OUT> comparator) {
+     *         return reduce(BinaryOperator.maxBy(comparator));
+     *     }
+     *
+     *     @Override
+     *     public final Optional<P_OUT> min(Comparator<? super P_OUT> comparator) {
+     *         return reduce(BinaryOperator.minBy(comparator));
+     *
+     *     }
+     *
+     *
+     */
     public static void chainOperate() {
 
+
+        Function<Integer, Integer> fun1 = x -> x * 2;
+
+        Function<Integer, Integer> fun2 = x -> x + 2;
+
+        System.out.println(fun1.apply(1));
+
+        // compose 是before当前调用者执行  fun2 -> fun1
+        System.out.println(fun1.compose(fun2).apply(1));
+
+        // andThen 是after当前调用者执行   fun2 -> fun1 -> fun2
+        System.out.println(fun1.compose(fun2).andThen(fun2).apply(1));
+
+        // fun2 -> fun2 -> fun1
+        System.out.println(fun1.compose(fun2).compose(fun2).apply(1));
+
+        System.out.println();
 
 
     }
