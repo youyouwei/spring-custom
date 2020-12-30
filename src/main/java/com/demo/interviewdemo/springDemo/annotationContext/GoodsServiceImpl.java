@@ -1,5 +1,6 @@
 package com.demo.interviewdemo.springDemo.annotationContext;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
  * @Date: Created in 11:54 2020/11/28
  */
 @Service
+@Order(100)
 public class GoodsServiceImpl implements GoodsService {
 
     @Override

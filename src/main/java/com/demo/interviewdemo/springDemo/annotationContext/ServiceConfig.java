@@ -20,8 +20,8 @@ public class ServiceConfig {
         ApplicationContext context = new AnnotationConfigApplicationContext(ServiceConfig.class);
         DemoService service = context.getBean(DemoService.class);
         service.method();
-        GoodsService goodsService = context.getBean(GoodsService.class);
-        goodsService.sell();
+//        GoodsService goodsService = context.getBean(GoodsService.class);
+//        goodsService.sell();
 
 
         PrototypeBean prototypeBean = context.getBean(PrototypeBean.class);

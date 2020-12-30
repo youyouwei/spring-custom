@@ -1,13 +1,13 @@
 package com.demo.interviewdemo.java8Demo.streamDemo;
 
+import com.demo.interviewdemo.annotationAndReflect.RuntimeAnnotation;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @description: 集合stream操作
@@ -21,8 +21,13 @@ public class StreamDemo {
     public static void main(String[] args) {
 
 
-        reduceMethod();
+//        reduceMethod();
+//        streamBuild();
+//        flatMap();
+
+        mapReduce();
     }
+
 
     /**
      * toMap使用方法
@@ -99,10 +104,76 @@ public class StreamDemo {
      */
     public static void mapReduce() {
 
+        // 通过 map(u->1) 来计算 元素个数  reduce 的 identity 参数是 初始值 就是和第一个元素进行reduce的值
+        System.out.println(Stream.of(1, 2, 3, 4).map(u -> 1).reduce(0, (x, y) -> x + y));
+
+        System.out.println(Stream.of(1,2,3).count());
+
+
+    }
+
+    /**
+     * if else 判断
+     */
+    public static void check() {
+
+        boolean check = false;
+        if (check) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+
+        // 如果
+
+        Optional.of(check).filter(x -> x).orElseThrow(() -> new RuntimeException(""));
+
+    }
+
+    /**
+     * stream build by multi type
+     */
+    public static void streamBuild() {
+
+        Stream.builder().add(1).add("string").add(new Object()).build().forEach(System.out::println);
+
+
+        Stream.Builder builder = Stream.builder();
+        builder.accept(2);
+
+        Stream stream = builder.build();
+
+        stream.forEach(System.out::println);
+    }
+
+
+    public static void flatMap() {
+
+        // 可以通过 flatMap 操作 合并多个List 集合
+        Stream.of(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6), Arrays.asList(4, 5, 6))
+                .flatMap(Collection::stream)
+                .forEach(System.out::println);
+
+    }
+
+    public static void chainOperate() {
 
 
 
     }
+
+
+    abstract static class Christmas {
+
+        public static void method() {
+            System.out.println("merry ");
+        }
+
+    }
+
+
+
+
 
 
 

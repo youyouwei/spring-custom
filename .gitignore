@@ -31,5 +31,5 @@ target/
 *.iml___jb_tmp___
 *.versionsBackup
 
-application.yml
+#application.yml
 dmds_connection_APP*.txt
