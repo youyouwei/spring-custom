@@ -1,4 +1,4 @@
-package com.demo.interviewdemo.concurrentDemo;
+package com.demo.interviewdemo.concurrentDemo.atomic;
 
 import com.google.common.base.Stopwatch;
 
